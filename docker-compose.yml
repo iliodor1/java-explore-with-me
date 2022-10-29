@@ -20,7 +20,7 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
 
-  stat:
+  stats-server:
     build: ./stat
     container_name: stat
     ports:
@@ -33,7 +33,7 @@ services:
       - POSTGRES_PASSWORD=root
       - SERVER-PORT=9090
 
-  main:
+  ewm-service:
     build: ./main
     container_name: main
     ports:
