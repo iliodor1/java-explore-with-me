@@ -1,17 +1,19 @@
 package ru.practicum.main.event.dto;
 
-import lombok.*;
+import lombok.Data;
 import ru.practicum.main.event.model.Event;
 
-import javax.validation.constraints.*;
-import java.io.Serializable;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
+import javax.validation.constraints.Size;
 
 /**
  * A DTO for the {@link Event} entity
  */
 
 @Data
-public class NewEventDto implements Serializable {
+public class NewEventDto{
     @Size(min = 20, max = 2000)
     @NotBlank(message = "The annotation should not be empty.")
     private final String annotation;

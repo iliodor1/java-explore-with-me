@@ -8,13 +8,12 @@ import ru.practicum.main.user.dto.UserShortDto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 
 /**
  * A DTO for the {@link Event} entity
  */
 @Data
-public class EventFullDto implements Serializable {
+public class EventFullDto {
     private final Long id;
     @NotBlank
     private final String annotation;
