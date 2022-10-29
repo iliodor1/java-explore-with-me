@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
  */
 
 @Data
-public class NewEventDto{
+public class NewEventDto {
     @Size(min = 20, max = 2000)
     @NotBlank(message = "The annotation should not be empty.")
     private final String annotation;
