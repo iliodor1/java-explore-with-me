@@ -5,6 +5,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.lang.Nullable;
 
 import java.util.Map;
 
@@ -15,7 +16,7 @@ public class BaseClient {
         this.rest = rest;
     }
 
-    protected ResponseEntity<Object> get(String path, Map<String, Object> parameters) {
+    protected ResponseEntity<Object> get(String path, @Nullable Map<String, Object> parameters) {
         return makeAndSendRequest(HttpMethod.GET, path, parameters, null);
     }
 
@@ -26,8 +27,8 @@ public class BaseClient {
     private <T> ResponseEntity<Object> makeAndSendRequest(
             HttpMethod method,
             String path,
-            Map<String, Object> parameters,
-            T body
+            @Nullable Map<String, Object> parameters,
+            @Nullable T body
     ) {
         HttpEntity<T> requestEntity = new HttpEntity<>(body);
 
@@ -39,13 +40,15 @@ public class BaseClient {
                 serverResponse = rest.exchange(path, method, requestEntity, Object.class);
             }
         } catch (HttpStatusCodeException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getResponseBodyAsByteArray());
+            return ResponseEntity.status(e.getStatusCode())
+                                 .body(e.getResponseBodyAsByteArray());
         }
         return prepareResponse(serverResponse);
     }
 
     private static ResponseEntity<Object> prepareResponse(ResponseEntity<Object> response) {
-        if (response.getStatusCode().is2xxSuccessful()) {
+        if (response.getStatusCode()
+                    .is2xxSuccessful()) {
             return response;
         }
 
@@ -57,4 +60,5 @@ public class BaseClient {
 
         return responseBuilder.build();
     }
+
 }
