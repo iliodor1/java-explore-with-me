@@ -39,16 +39,18 @@ public class EventMapperServiceImpl implements EventMapperService {
 
     @Override
     public EventFullDto getEventFullViews(EventFullDto event) {
-        Long views = getViews(event.getId()).getHits();
-        event.setViews(views == null ? 0 : views);
+        ViewStat views = getViews(event.getId());
+        Long hits = views == null ? 0 : views.getHits();
+        event.setViews(hits);
 
         return event;
     }
 
     @Override
     public EventShortDto getEventShortViews(EventShortDto event) {
-        Long views = getViews(event.getId()).getHits();
-        event.setViews(views == null ? 0 : views);
+        ViewStat views = getViews(event.getId());
+        Long hits = views == null ? 0 : views.getHits();
+        event.setViews(hits);
 
         return event;
     }
@@ -59,8 +61,10 @@ public class EventMapperServiceImpl implements EventMapperService {
 
         Object object = response.getBody();
 
-        return om.convertValue(object, new TypeReference<List<ViewStat>>() {
-        }).get(0);
+        List<ViewStat> viewStats = om.convertValue(object, new TypeReference<List<ViewStat>>() {
+        });
+
+        return viewStats.isEmpty() ? null : viewStats.get(0);
     }
 
 }

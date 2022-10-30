@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: root
-    url: jdbc:postgresql://localhost:5432/stat
+    url: jdbc:postgresql://db-stats:5432/stat
     driverClassName: org.postgresql.Driver
     password: root
   sql:
@@ -17,13 +17,6 @@ spring:
 
 server:
   port: 9090
-logging:
-  level:
-    org:
-      springframework:
-        web:
-          client:
-            RestTemplate: DEBUG
 ...
 ---
 spring:

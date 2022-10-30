@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.validation.ValidationException;
 
-@RestControllerAdvice("ru.practicum.ewm")
+@RestControllerAdvice("ru.practicum.main")
 public class ErrorHandler {
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -41,13 +41,10 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category getCategory(Long id) {
-        return repository.findById(id)
-                         .orElseThrow(() -> {
-                             log.error("The category '{}' was not found.", id);
-                             throw new NotFoundException(
-                                     String.format("The category id '%d' was not found.", id)
-                             );
-                         });
+        return repository.findById(id).orElseThrow(() -> {
+            log.error("The category '{}' was not found.", id);
+            throw new NotFoundException(String.format("The category id '%d' was not found.", id));
+        });
     }
 
     @Override
