@@ -7,25 +7,47 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * Stat is the entity we'll be using to store information about endpoints stats.
+ *
+ * @author Eldar Gainanov
+ */
+
 @Entity
 @Getter
 @Setter
 @Table(name = "stats")
 public class Stat {
+
+    /**
+     * The Stat identifier.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
+    /**
+     * App is a name of a service whose information is being recorded.
+     */
     @Column(name = "app", nullable = false)
     private String app;
 
+    /**
+     * URI for which the request was made.
+     */
     @Column(name = "uri")
     private String uri;
 
+    /**
+     *ip address of the user who made the request
+     */
     @Column(name = "ip", nullable = false)
     private String ip;
 
+    /**
+     * Date and time when the request was made to the endpoint.
+     */
     @Column(name = "timestamp", nullable = false)
     private LocalDateTime timestamp;
 
