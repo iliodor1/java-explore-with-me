@@ -1,5 +1,6 @@
 package ru.practicum.main.services.user;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
@@ -18,7 +19,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository repository;
 
     @Override
-    public User create(User user) {
+    public User create(@NonNull User user) {
         return repository.save(user);
     }
 

@@ -1,23 +1,43 @@
 package ru.practicum.main.exeptions;
 
+
+import lombok.Data;
+import org.springframework.http.HttpStatus;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 public class ErrorResponse {
-    private String error;
-    private String description;
+    private static final DateTimeFormatter DATE_TIME = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private final List<StackTraceElement> errors;
+    private final String message;
+    private final String reason;
+    private final HttpStatus status;
+    private final String timestamp;
 
-    public ErrorResponse(String error, String description) {
-        this.error = error;
-        this.description = description;
+    public ErrorResponse(Throwable exception, HttpStatus status, String reason, String message) {
+        this.errors = List.of(exception.getStackTrace());
+        this.status = status;
+        this.reason = reason;
+        this.message = message;
+        this.timestamp = LocalDateTime.now().format(DATE_TIME);
     }
 
-    public ErrorResponse(String error) {
-        this.error = error;
+    public String getMessage() {
+        return message;
     }
 
-    public String getError() {
-        return error;
+    public String getReason() {
+        return reason;
     }
 
-    public String getDescription() {
-        return description;
+    public HttpStatus getStatus() {
+        return status;
     }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
 }

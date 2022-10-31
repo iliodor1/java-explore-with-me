@@ -1,5 +1,6 @@
 package ru.practicum.main.services.event;
 
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -52,7 +53,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public Event updateByAdmin(Long eventId, AdminUpdateEventRequest updateEventRequest) {
+    public Event updateByAdmin(Long eventId, @NonNull AdminUpdateEventRequest updateEventRequest) {
         Event updateEvent = mapper.updateEvent(updateEventRequest, getEvent(eventId));
 
         return eventRepository.save(updateEvent);
@@ -146,7 +147,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public Event update(UpdateEventRequest updateEventRequest, Long userId) {
+    public Event update(@NonNull UpdateEventRequest updateEventRequest, Long userId) {
         Event event = eventRepository.findById(updateEventRequest.getEventId())
                                      .orElseThrow(() -> {
                                          log.error("The event id '{}' not found", updateEventRequest.getEventId());
@@ -182,7 +183,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public Event create(Event event, Long userId) {
+    public Event create(@NonNull Event event, Long userId) {
         if (event.getEventDate()
                  .minusHours(2)
                  .isBefore(LocalDateTime.now())) {
@@ -248,7 +249,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public Event getPublishedEvent(Long id, StatDto statDto) {
+    public Event getPublishedEvent(Long id, @NonNull StatDto statDto) {
         return eventRepository.findByIdAndState(id, State.PUBLISHED)
                               .orElseThrow(() -> new NotFoundException("The required object was not found."));
     }

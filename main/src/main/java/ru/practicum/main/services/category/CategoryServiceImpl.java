@@ -1,6 +1,7 @@
 
 package ru.practicum.main.services.category;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
@@ -20,12 +21,12 @@ public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository repository;
 
     @Override
-    public Category create(Category category) {
+    public Category create(@NonNull Category category) {
         return repository.save(category);
     }
 
     @Override
-    public Category update(Category category) {
+    public Category update(@NonNull Category category) {
         getCategory(category.getId());
 
         return repository.save(category);

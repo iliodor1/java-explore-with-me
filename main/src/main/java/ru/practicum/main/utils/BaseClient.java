@@ -1,4 +1,4 @@
-package ru.practicum.main.client;
+package ru.practicum.main.utils;
 
 import org.springframework.http.*;
 import org.springframework.web.client.HttpStatusCodeException;

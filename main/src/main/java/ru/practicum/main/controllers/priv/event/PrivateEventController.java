@@ -1,4 +1,4 @@
-package ru.practicum.main.controllers.event;
+package ru.practicum.main.controllers.priv.event;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;

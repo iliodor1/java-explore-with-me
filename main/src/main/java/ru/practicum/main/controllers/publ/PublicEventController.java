@@ -1,8 +1,8 @@
-package ru.practicum.main.controllers.event;
+package ru.practicum.main.controllers.publ;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.practicum.main.client.EventClient;
+import ru.practicum.main.utils.EventClient;
 import ru.practicum.main.dto.event.EventFullDto;
 import ru.practicum.main.dto.event.EventShortDto;
 import ru.practicum.main.dto.stat.StatDto;

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import ru.practicum.main.client.EventClient;
+import ru.practicum.main.utils.EventClient;
 import ru.practicum.main.dto.event.EventFullDto;
 import ru.practicum.main.dto.event.EventShortDto;
 import ru.practicum.main.dto.stat.ViewStat;

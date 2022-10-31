@@ -1,4 +1,4 @@
-package ru.practicum.main.controllers.user;
+package ru.practicum.main.controllers.priv.user;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;

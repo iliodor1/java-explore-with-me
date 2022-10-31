@@ -1,5 +1,6 @@
 package ru.practicum.main.services.compilation;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
@@ -21,7 +22,7 @@ public class CompilationServiceImpl implements CompilationService {
     private final EventService eventService;
 
     @Override
-    public Compilation create(Compilation compilation) {
+    public Compilation create(@NonNull Compilation compilation) {
         return repository.save(compilation);
     }
 

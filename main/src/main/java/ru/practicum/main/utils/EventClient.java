@@ -1,4 +1,4 @@
-package ru.practicum.main.client;
+package ru.practicum.main.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
