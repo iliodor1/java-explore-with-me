@@ -7,6 +7,12 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 import java.util.Objects;
 
+/**
+ * Category is the entity we'll be using to store information about the category for events.
+ *
+ * @author Eldar Gainanov
+ */
+
 @Entity
 @Getter
 @Setter
@@ -14,11 +20,17 @@ import java.util.Objects;
 @Table(name = "categories")
 @DynamicUpdate
 public class Category {
+    /**
+     * The category identifier.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
+    /**
+     * Name of category.
+     */
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 

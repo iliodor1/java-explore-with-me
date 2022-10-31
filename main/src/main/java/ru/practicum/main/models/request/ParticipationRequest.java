@@ -10,6 +10,11 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * ParticipationRequest is the entity we'll be using to store information about requests to participate in events.
+ *
+ * @author Eldar Gainanov
+ */
 @Entity
 @Table(name = "request", uniqueConstraints =
     @UniqueConstraint(columnNames = {"event_id", "requester_id"}))
@@ -18,11 +23,18 @@ import java.util.Objects;
 @ToString
 @DynamicUpdate
 public class ParticipationRequest {
+
+    /**
+     * The ParticipationRequest identifier.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
+    /**
+     * Date and time the request was created.
+     */
     @Column(name = "created", nullable = false)
     private LocalDateTime created;
 
@@ -34,6 +46,9 @@ public class ParticipationRequest {
     @JoinColumn(name = "requester_id", nullable = false)
     private User user;
 
+    /**
+     *The request status
+     */
     @Column(name = "status", nullable = false)
     private Status status;
 

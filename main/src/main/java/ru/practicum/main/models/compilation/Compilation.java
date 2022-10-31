@@ -8,23 +8,40 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Compilation is the entity we'll be using to store information about events compilation.
+ *
+ * @author Eldar Gainanov
+ */
 @Entity
 @Table(name = "compilations")
 @Getter
 @Setter
 @RequiredArgsConstructor
 public class Compilation {
+    /**
+     * The compilation identifier.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
+    /**
+     *The compilation pinned to the main page.
+     */
     @Column(name = "pinned", nullable = false)
     private Boolean pinned;
 
+    /**
+     * The compilation title.
+     */
     @Column(name = "title", nullable = false)
     private String title;
 
+    /**
+     * List of events included in the compilation.
+     */
     @ManyToMany
     @JoinTable(
             name = "events_compilation",
