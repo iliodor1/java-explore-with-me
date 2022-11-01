@@ -12,45 +12,42 @@ import static org.springframework.http.HttpStatus.*;
 
 @RestControllerAdvice("ru.practicum.main")
 public class ErrorHandler {
-    private final static String SERVER_ERROR_REASON = "Error occurred.";
-    private final static String CONFLICT_REASON = "Integrity constraint has been violated.";
-    private final static String BAD_REQUEST_REASON = "The request was made with an error.";
-    private final static String NOT_FOUND_REASON = "The required object was not found.";
+    public final static String SERVER_ERROR_REASON = "Error occurred.";
 
     @ExceptionHandler
     @ResponseStatus(BAD_REQUEST)
     public ErrorResponse handleBadRequestException(BadRequestException e) {
-        return new ErrorResponse(e, BAD_REQUEST, BAD_REQUEST_REASON, e.getMessage());
+        return new ErrorResponse(e, BAD_REQUEST, BadRequestException.MESSAGE, e.getMessage());
     }
 
     @ExceptionHandler
     @ResponseStatus(NOT_FOUND)
     public ErrorResponse handleNotFoundRequestException(NotFoundException e) {
-        return new ErrorResponse(e, NOT_FOUND, NOT_FOUND_REASON, e.getMessage());
+        return new ErrorResponse(e, NOT_FOUND, NotFoundException.MESSAGE, e.getMessage());
     }
 
     @ExceptionHandler
     @ResponseStatus(CONFLICT)
     public ErrorResponse handleConflictRequestException(ConflictRequestException e) {
-        return new ErrorResponse(e, CONFLICT, CONFLICT_REASON, e.getMessage());
+        return new ErrorResponse(e, CONFLICT, ConflictRequestException.MESSAGE, e.getMessage());
     }
 
     @ExceptionHandler
     @ResponseStatus(CONFLICT)
     public ErrorResponse handleConstraintViolationException(ConstraintViolationException e) {
-        return new ErrorResponse(e, CONFLICT, CONFLICT_REASON, e.getMessage());
+        return new ErrorResponse(e, CONFLICT, ConflictRequestException.MESSAGE, e.getMessage());
     }
 
     @ExceptionHandler(ValidationException.class)
     @ResponseStatus(BAD_REQUEST)
     public ErrorResponse handleValidationException(ValidationException e) {
-        return new ErrorResponse(e, BAD_REQUEST, BAD_REQUEST_REASON, e.getMessage());
+        return new ErrorResponse(e, BAD_REQUEST, BadRequestException.MESSAGE, e.getMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(BAD_REQUEST)
     public ErrorResponse handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
-        return new ErrorResponse(e, BAD_REQUEST, BAD_REQUEST_REASON, e.getMessage());
+        return new ErrorResponse(e, BAD_REQUEST, BadRequestException.MESSAGE, e.getMessage());
     }
 
     @ExceptionHandler
