@@ -14,10 +14,15 @@ import java.io.Serializable;
  */
 @Data
 public class NewUserRequest implements Serializable {
+    /**
+     * First and last name of the user.
+     */
     @NotBlank(message = "The name must not be empty.")
     @Size(max = 255)
     private final String name;
-
+    /**
+     * User email.
+     */
     @NotNull(message = "The email must not be null.")
     @Email(message = "Invalid email address.")
     @Size(max = 255)

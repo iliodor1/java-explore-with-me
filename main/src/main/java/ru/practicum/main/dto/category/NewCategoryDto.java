@@ -13,7 +13,9 @@ import java.io.Serializable;
  */
 @Data
 public class NewCategoryDto implements Serializable {
-
+    /**
+     * Name of category.
+     */
     @NotBlank(message = "The name must not be empty.")
     private final String name;
 

@@ -10,10 +10,25 @@ import java.io.Serializable;
  */
 @Data
 public class ParticipationRequestDto implements Serializable {
+    /**
+     * The ParticipationRequest identifier.
+     */
     private final Long id;
+    /**
+     * Date and time the request was created.
+     */
     private final String created;
+    /**
+     *The event identifier
+     */
     private final Long event;
+    /**
+     *The user identifier
+     */
     private final Long requester;
+    /**
+     *The request status
+     */
     private final String status;
 
 }

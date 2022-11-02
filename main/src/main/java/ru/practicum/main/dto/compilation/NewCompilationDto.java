@@ -12,9 +12,18 @@ import java.util.List;
  */
 @Data
 public class NewCompilationDto implements Serializable {
+    /**
+     *The compilation pinned to the main page.
+     */
     private final Boolean pinned;
+    /**
+     * The compilation title.
+     */
     @NotBlank
     private final String title;
+    /**
+     * List of events identifiers included in the compilation.
+     */
     private final List<Long> events;
 
 }

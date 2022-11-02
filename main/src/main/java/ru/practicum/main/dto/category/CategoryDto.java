@@ -13,10 +13,14 @@ import java.io.Serializable;
  */
 @Data
 public class CategoryDto implements Serializable {
-
+    /**
+     * The category identifier.
+     */
     @NotNull(message = "The id must not be null.")
     private final Long id;
-
+    /**
+     * Name of category.
+     */
     @NotBlank(message = "The name must not be empty.")
     @Size(max = 255)
     private final String name;

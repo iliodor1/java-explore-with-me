@@ -14,18 +14,43 @@ import java.io.Serializable;
  */
 @Data
 public class EventShortDto implements Serializable {
+    /**
+     * The event identifier.
+     */
     private final Long id;
+
+    /**
+     *Short description of the event.
+     */
     @NotBlank
     private final String annotation;
+    /**
+     * The {@link CategoryDto} DTO.
+     */
     private final CategoryDto category;
     private final Long confirmedRequests;
     @NotNull
+    /**
+     * Date and time of the event.
+     */
     private final String eventDate;
+    /**
+     * The {@linc UserDto}.
+     */
     private final UserDto initiator;
+    /**
+     * Participation of the event is paid (true) or free (false)
+     */
     @NotNull
     private final Boolean paid;
+    /**
+     *The event title.
+     */
     @NotNull
     private final String title;
+    /**
+     *Total event views
+     */
     private Long views;
 
 }

@@ -14,12 +14,24 @@ import java.util.List;
  */
 @Data
 public class CompilationDto implements Serializable {
+    /**
+     * The compilation identifier.
+     */
     @NotNull
     private final Long id;
+    /**
+     *The compilation pinned to the main page.
+     */
     @NotNull
     private final Boolean pinned;
+    /**
+     * The compilation title.
+     */
     @NotBlank
     private final String title;
+    /**
+     * List of events {@link EventShortDto} included in the compilation.
+     */
     private final List<EventShortDto> events;
 
 }
