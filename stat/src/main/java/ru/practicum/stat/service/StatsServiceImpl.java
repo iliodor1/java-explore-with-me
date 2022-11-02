@@ -1,9 +1,9 @@
 package ru.practicum.stat.service;
 
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.practicum.stat.dto.ViewStat;
+import ru.practicum.stat.exeptions.BadRequestException;
 import ru.practicum.stat.model.Stat;
 import ru.practicum.stat.repository.StatsRepository;
 
@@ -17,7 +17,11 @@ public class StatsServiceImpl implements StatsService {
     private final StatsRepository repository;
 
     @Override
-    public void addStat(@NonNull Stat stat) {
+    public void addStat(Stat stat) {
+        if (stat == null) {
+            throw new BadRequestException("Stat should be not null");
+        }
+
         repository.save(stat);
     }
 
