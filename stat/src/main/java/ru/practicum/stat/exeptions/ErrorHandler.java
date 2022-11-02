@@ -9,7 +9,7 @@ import static org.springframework.http.HttpStatus.*;
 
 @RestControllerAdvice("ru.practicum.stat")
 public class ErrorHandler {
-    public final static String SERVER_ERROR_REASON = "Error occurred.";
+    public static final String SERVER_ERROR_REASON = "Error occurred.";
 
     @ExceptionHandler
     @ResponseStatus(BAD_REQUEST)
