@@ -1,7 +1,6 @@
 package ru.practicum.main.exeptions;
 
 
-import lombok.Data;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;

@@ -1,7 +1,6 @@
 package ru.practicum.main.dto.event;
 
 import lombok.Data;
-import ru.practicum.main.dto.category.CategoryDto;
 import ru.practicum.main.models.event.Event;
 
 import javax.validation.constraints.NotBlank;
