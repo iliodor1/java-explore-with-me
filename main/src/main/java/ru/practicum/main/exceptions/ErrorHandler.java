@@ -1,4 +1,4 @@
-package ru.practicum.main.exeptions;
+package ru.practicum.main.exceptions;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;

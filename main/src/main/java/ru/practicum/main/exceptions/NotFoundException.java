@@ -1,4 +1,4 @@
-package ru.practicum.main.exeptions;
+package ru.practicum.main.exceptions;
 
 public class NotFoundException extends RuntimeException {
     public static final String MESSAGE = "The required object was not found.";

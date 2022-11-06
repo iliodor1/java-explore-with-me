@@ -7,7 +7,7 @@ import ru.practicum.main.dto.event.EventFullDto;
 import ru.practicum.main.mappers.event.EventMapper;
 import ru.practicum.main.models.event.State;
 import ru.practicum.main.services.event.EventService;
-import ru.practicum.main.exeptions.BadRequestException;
+import ru.practicum.main.exceptions.BadRequestException;
 
 import java.util.List;
 import java.util.stream.Collectors;

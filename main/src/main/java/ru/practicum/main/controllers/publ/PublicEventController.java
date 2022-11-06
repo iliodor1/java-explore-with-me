@@ -10,7 +10,7 @@ import ru.practicum.main.mappers.event.EventMapper;
 import ru.practicum.main.models.event.Event;
 import ru.practicum.main.models.event.Sort;
 import ru.practicum.main.services.event.EventService;
-import ru.practicum.main.exeptions.BadRequestException;
+import ru.practicum.main.exceptions.BadRequestException;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import ru.practicum.main.models.compilation.Compilation;
 import ru.practicum.main.repositories.compilation.CompilationRepository;
 import ru.practicum.main.models.event.Event;
-import ru.practicum.main.exeptions.NotFoundException;
+import ru.practicum.main.exceptions.NotFoundException;
 import ru.practicum.main.services.event.EventService;
 
 import java.util.List;
