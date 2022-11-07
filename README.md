@@ -41,7 +41,7 @@ Explore with me - это приложение в котором вы может�
 
 ### Схема базы данных
 
-[![dbdiagram](https://github.com/iliodor1/java-explore-with-me/blob/develop/dbdiagram.png)]
+![dbdiagram](https://github.com/iliodor1/java-explore-with-me/blob/develop/dbdiagram.png)
 
 
 ### Автор
