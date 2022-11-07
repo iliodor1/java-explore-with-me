@@ -36,7 +36,7 @@ Explore with me - это приложение в котором вы может�
    * Спецификация основного
    сервиса: [ewm-main-service-spec.json](https://raw.githubusercontent.com/yandex-praktikum/java-explore-with-me/main/ewm-main-service-spec.json)
    * Stat Server URL
-      http://localhost:5000/
+      http://localhost:9090/
    * Спецификация сервиса статистики: [ewm-stats-service.json](https://raw.githubusercontent.com/yandex-praktikum/java-explore-with-me/main/ewm-stats-service-spec.json)
 
 ### Схема базы данных

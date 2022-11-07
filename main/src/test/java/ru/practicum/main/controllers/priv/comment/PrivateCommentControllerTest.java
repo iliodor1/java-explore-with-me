@@ -68,14 +68,14 @@ class PrivateCommentControllerTest {
                    .accept(MediaType.APPLICATION_JSON))
            .andExpect(status().isOk())
            .andExpect(jsonPath("$.id", is(commentDto.getId()), Long.class))
-                .andExpect(jsonPath("$.text", is(commentDto.getText()), String.class))
+           .andExpect(jsonPath("$.text", is(commentDto.getText()), String.class))
            .andExpect(jsonPath("$.userName", is(commentDto.getUserName()), String.class))
            .andExpect(jsonPath("$.status", is(commentDto.getStatus()
-                                                              .toString())));
+                                                        .toString())));
     }
 
     @Test
-    void whenUpdate_thenReturnUpdatedCommentStatus2xx() throws Exception{
+    void whenUpdate_thenReturnUpdatedCommentStatus2xx() throws Exception {
         RequestCommentDto requestCommentDto = new RequestCommentDto("Updated comment");
         commentDto = new CommentDto(
                 1L,
@@ -119,7 +119,7 @@ class PrivateCommentControllerTest {
            .andExpect(jsonPath("$.text", is(commentDto.getText()), String.class))
            .andExpect(jsonPath("$.userName", is(commentDto.getUserName()), String.class))
            .andExpect(jsonPath("$.status", is(commentDto.getStatus()
-                                                              .toString())));
+                                                        .toString())));
     }
 
     @Test

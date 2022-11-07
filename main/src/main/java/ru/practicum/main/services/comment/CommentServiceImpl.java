@@ -55,7 +55,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public CommentDto update(Long userId, Long eventId, Long commentId ,RequestCommentDto commentDto) {
+    public CommentDto update(Long userId, Long eventId, Long commentId, RequestCommentDto commentDto) {
         Comment comment = findCommentById(commentId);
 
         User user = userService.getUser(userId);

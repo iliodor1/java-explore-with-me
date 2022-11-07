@@ -5,6 +5,7 @@ import ru.practicum.main.models.comment.Comment;
 import ru.practicum.main.models.comment.CommentStatus;
 
 import java.io.Serializable;
+
 /**
  * A DTO for the {@link Comment} entity
  *
