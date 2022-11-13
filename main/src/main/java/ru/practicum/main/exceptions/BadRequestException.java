@@ -1,4 +1,4 @@
-package ru.practicum.main.exeptions;
+package ru.practicum.main.exceptions;
 
 public class BadRequestException extends RuntimeException {
     public static final String MESSAGE = "The request was made with an error.";

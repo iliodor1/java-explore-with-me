@@ -15,9 +15,9 @@ import ru.practicum.main.repositories.event.EventRepository;
 import ru.practicum.main.dto.stat.StatDto;
 import ru.practicum.main.models.event.Event;
 import ru.practicum.main.models.event.State;
-import ru.practicum.main.exeptions.BadRequestException;
-import ru.practicum.main.exeptions.ConflictRequestException;
-import ru.practicum.main.exeptions.NotFoundException;
+import ru.practicum.main.exceptions.BadRequestException;
+import ru.practicum.main.exceptions.ConflictRequestException;
+import ru.practicum.main.exceptions.NotFoundException;
 import ru.practicum.main.services.user.UserService;
 import ru.practicum.main.services.category.CategoryService;
 

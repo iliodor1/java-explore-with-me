@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.DynamicUpdate;
+import ru.practicum.main.models.comment.Comment;
 import ru.practicum.main.models.request.ParticipationRequest;
 import ru.practicum.main.models.user.User;
 import ru.practicum.main.models.category.Category;
@@ -125,6 +126,13 @@ public class Event {
     @OneToMany(mappedBy = "event")
     @JsonIgnore
     Set<ParticipationRequest> requests = new HashSet<>();
+
+    /**
+     * List of comments on the event.
+     */
+    @OneToMany(mappedBy = "event")
+    @JsonIgnore
+    Set<Comment> comments = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {

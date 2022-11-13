@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ru.practicum.main.models.category.Category;
 import ru.practicum.main.repositories.category.CategoryRepository;
-import ru.practicum.main.exeptions.NotFoundException;
+import ru.practicum.main.exceptions.NotFoundException;
 
 import java.util.List;
 import java.util.Optional;

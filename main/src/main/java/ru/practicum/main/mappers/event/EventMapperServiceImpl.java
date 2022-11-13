@@ -11,7 +11,7 @@ import ru.practicum.main.dto.event.EventShortDto;
 import ru.practicum.main.dto.stat.ViewStat;
 import ru.practicum.main.models.event.Event;
 import ru.practicum.main.repositories.event.EventRepository;
-import ru.practicum.main.exeptions.NotFoundException;
+import ru.practicum.main.exceptions.NotFoundException;
 import ru.practicum.main.models.request.Status;
 import ru.practicum.main.repositories.request.ParticipationRequestRepository;
 
